@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: typing-challenge-game
+    env: node
+    plan: free
+    buildCommand: npm install && npm run build
+    startCommand: npm start
+    envVars:
+      - key: MONGODB_URI
+        value: mongodb+srv://ayra11349:l5r70wYofri4QFLw@typinggamecluster.aabcxmq.mongodb.net/typing-game?retryWrites=true&w=majority&appName=TypingGameCluster
+      - key: NODE_ENV
+        value: production
+    autoDeploy: true
